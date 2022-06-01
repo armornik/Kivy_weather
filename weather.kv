@@ -1,0 +1,68 @@
+# размеры дисплей пиксели (dp)
+AddLocationForm:
+
+<AddLocationForm@BoxLayout>:
+    orientation: "vertical"
+    BoxLayout:
+        height: "40dp" #
+        size_hint_y: None
+        TextInput:
+            size_hint_x: 50 #
+        Button:
+            text: "Search"
+            size_hint_x: 25 #
+        Button:
+            text: "Current Location"
+            size_hint_x: 25 #
+    RV:
+        viewclass: 'Label'
+        RecycleBoxLayout:
+            default_size: None, dp(56)
+            default_size_hint: 1, None
+            size_hint_y: None
+            height: self.minimum_height
+            orientation: 'vertical'
+
+
+#AddLocationForm: # Корневой виджет теперь является пользовательским виджетом с именем AddLocationForm. Это не иметь блок с отступом под ним, поэтому нет свойств или дочерних виджетов определенный.
+#<AddLocationForm@BoxLayout>: # Здесь определяется новый пользовательский класс. Символ @ на языке KV указывает что класс расширяет BoxLayout с помощью наследования. Это означает, что новый виджет представляет собой BoxLayout и может делать все то же, что и BoxLayout, например, класть из своих детей. Угловые скобки сообщают языку KV, что это новый классовое правило, а не корневой виджет.
+#    orientation: "vertical" # AddLocationForm is a BoxLayout like in the previous example, but you are setting its orientation property to vertical. This will force its child elements to appear one above the other. The child elements in this case are another BoxLayout (this one is horizontal), and a ListView.
+#    BoxLayout:
+#        TextInput:
+#        Button:
+#            text: "Search"
+#        Button:
+#            text: "Current Location"
+#    RV:
+#        viewclass: 'Label'
+#        RecycleBoxLayout:
+#            default_size: None, dp(56)
+#            default_size_hint: 1, None
+#            size_hint_y: None
+#            height: self.minimum_height
+#            orientation: 'vertical'
+
+
+# BoxLayout:
+#     orientation: "vertical"
+#     BoxLayout:
+#         Button:
+#             size_hint_x: 1
+#         Button:
+#             size_hint_x: 1
+#         Button:
+#             size_hint_x: 1
+#     BoxLayout:
+#         Button:
+#             size_hint_x: 1
+#         Button:
+#             size_hint_x: 2
+#         Button:
+#             size_hint_x: 3
+#     BoxLayout:
+#         Button:
+#             size_hint_x: 1
+#         Button:
+#             size_hint_x: 0.75
+#         Button:
+#             size_hint_x: 0.25
